@@ -1,10 +1,13 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import type { FavouritesState } from "../../types";
+
+const initialState: FavouritesState = {
+  items: [],
+};
 
 const favoritesSlice = createSlice({
   name: "favorites",
-  initialState: {
-    items: [],
-  },
+  initialState,
   reducers: {
     addFavorite: (state, action) => {
       if (!state.items.includes(action.payload)) {

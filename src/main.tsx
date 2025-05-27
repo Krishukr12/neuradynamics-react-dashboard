@@ -1,16 +1,29 @@
 import "./index.css";
 
-import { App } from "./App.tsx";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { store } from "./redux/store.ts";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router";
+
+import { store } from "./redux/store.ts";
+import { Layout } from "./components/Layout.tsx";
+import { Product } from "./pages/Product.tsx";
+import { Favorites } from "./pages/Favorites.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Product />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+    ],
   },
 ]);
 

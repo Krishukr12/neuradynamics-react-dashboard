@@ -33,14 +33,14 @@ src/
 │   └── favorites/
 ├── pages/
 │   ├── Home.jsx
-│   ├── ProductDetail.jsx
-│   └── Favorites.jsx
+│   ├── ProductDetail.tsx
+│   └── Favorites.tsx
 ├── redux/
-│   ├── store.js
+│   ├── store.ts
 │   └── slices/
 ├── routes/
-├── App.jsx
-└── main.jsx
+├── App.tsx
+└── main.tsx
 ```
 
 ## ⚙️ Getting Started
