@@ -6,6 +6,7 @@ import { ProductCard } from "../components/ProductCard";
 import { useAppDispatch } from "../redux/hook";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import type { RootState } from "../redux/store";
+import { Error } from "../components/Error";
 
 export const Product = () => {
   const {
@@ -29,7 +30,7 @@ export const Product = () => {
             <LoadingSpinner label="Loading products..." />
           </div>
         ) : error ? (
-          <div className="text-center text-red-600">{error}</div>
+          <Error />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.map((product) => (

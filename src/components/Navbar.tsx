@@ -35,7 +35,6 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
               to="/"
@@ -82,16 +81,10 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               </svg>
-              Favorites
-              {favoritesCount > 0 && (
-                <span className="ml-1 px-2 py-1 rounded-full text-xs bg-primary text-primary-foreground min-w-[1.5rem]">
-                  {favoritesCount}
-                </span>
-              )}
+              Favorites{favoritesCount === 0 ? "" : `(${favoritesCount})`}
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -135,7 +128,6 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{
@@ -186,12 +178,7 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-            Favorites
-            {favoritesCount > 0 && (
-              <span className="ml-2 px-2 py-1 rounded-full text-xs bg-primary text-primary-foreground min-w-[1.5rem]">
-                {favoritesCount}
-              </span>
-            )}
+            Favorites{favoritesCount === 0 ? "" : `(${favoritesCount})`}
           </Link>
         </div>
       </div>

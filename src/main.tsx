@@ -9,6 +9,7 @@ import { store } from "./redux/store.ts";
 import { Layout } from "./components/Layout.tsx";
 import { Product } from "./pages/Product.tsx";
 import { Favorites } from "./pages/Favorites.tsx";
+import { ProductDetails } from "./pages/ProductDetails.tsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/favorites",
         element: <Favorites />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetails />,
       },
     ],
   },
