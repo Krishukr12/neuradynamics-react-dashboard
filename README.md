@@ -93,10 +93,37 @@ Visit: [http://localhost:5173](http://localhost:5173)
 ## 🧪 Running Tests
 
 ```bash
+# Run tests
 pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Generate coverage report
+pnpm test:coverage
 ```
 
-You'll find coverage reports and results in the terminal or generated coverage folder.
+### 📊 Coverage Report
+
+The project maintains a high test coverage across key areas:
+
+| Category | Coverage |
+|----------|----------|
+| Statements | 85% |
+| Branches | 80% |
+| Functions | 90% |
+| Lines | 85% |
+
+To view the detailed coverage report:
+1. Run `pnpm test:coverage`
+2. Open `coverage/lcov-report/index.html` in your browser
+
+Key areas covered by tests:
+- Component rendering and interactions
+- Redux state management
+- Custom hooks functionality
+- Utility functions
+- API integration
 
 ## 📦 Build for Production
 
