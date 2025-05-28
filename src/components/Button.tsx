@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes } from 'react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;

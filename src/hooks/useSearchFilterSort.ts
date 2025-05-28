@@ -1,12 +1,13 @@
-import type { Product } from './../types/product.types';
-import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { useEffect } from 'react';
+
+import type { Product } from '../types/product.types';
+import { useAppDispatch, useAppSelector } from '@redux/hook';
 import {
   clearSearchFilterSort,
   setCategory,
   setSearchTerm,
   setSortBy,
-} from '../redux/slices/filterSlice';
-import { useEffect } from 'react';
+} from '@redux/slices/filterSlice';
 
 export const useSearchFilterSort = (data: Product[]) => {
   const dispatch = useAppDispatch();

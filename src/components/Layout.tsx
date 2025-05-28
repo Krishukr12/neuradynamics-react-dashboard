@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { useEffect } from 'react';
-import { fetchProducts } from '../redux/slices/productSlice';
+
+import { Navbar } from '@components/Navbar';
+import { useAppDispatch, useAppSelector } from '@redux/hook';
+import { fetchProducts } from '@redux/slices/productSlice';
 
 export const Layout = () => {
   const { status } = useAppSelector(state => state.products);

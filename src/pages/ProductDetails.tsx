@@ -1,11 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import { Button } from '../components/Button';
-import { useAppDispatch, useAppSelector } from '../redux/hook';
-import { addFavorite, removeFavorite } from '../redux/slices/favouritesSlice';
-import { RatingStars } from '../components/RatingStars';
-import { LoadingSpinner } from '../components/LoadingSpinner';
-import { ProductNotFound } from '../components/ProductNotFound';
-import { Error } from '../components/Error';
+
+import { Button } from '@components/Button';
+import { RatingStars } from '@components/RatingStars';
+import { LoadingSpinner } from '@components/LoadingSpinner';
+import { ProductNotFound } from '@components/ProductNotFound';
+import { Error } from '@components/Error';
+
+import { addFavorite, removeFavorite } from '@redux/slices/favouritesSlice';
+import { useAppDispatch, useAppSelector } from '@redux/hook';
 
 export const ProductDetails = () => {
   const dispatch = useAppDispatch();

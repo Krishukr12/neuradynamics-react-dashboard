@@ -94,7 +94,7 @@ This app is deployed on **Vercel**
 
 🔗 **Live Demo:** _Coming soon_
 
-## 📹 Optional Demo Video
+## 📹 Demo Video
 
 A brief walkthrough video demonstrating the app functionality.  
 🎥 **Video Link:** _Coming soon_

@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
-import { ProductCard } from '../components/ProductCard';
-import { useAppSelector } from '../redux/hook';
-import { EmptyFavorites } from '../components/EmptyFavorites';
-import { LoadingSpinner } from '../components/LoadingSpinner';
-import { Error } from '../components/Error';
-import { ProductFilters } from '../components/ProductFilters';
 
-import { useSearchFilterSort } from '../hooks/useSearchFilterSort';
+import { ProductCard } from '@components/ProductCard';
+import { EmptyFavorites } from '@components/EmptyFavorites';
+import { LoadingSpinner } from '@components/LoadingSpinner';
+import { Error } from '@components/Error';
+import { ProductFilters } from '@components/ProductFilters';
+import { useAppSelector } from '@redux/hook';
+import { useSearchFilterSort } from '@hooks/useSearchFilterSort';
 
 export const Favorites = () => {
   const { status, items: allProducts } = useAppSelector(state => state.products);

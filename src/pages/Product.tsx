@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
-import { ProductCard } from '../components/ProductCard';
-import { LoadingSpinner } from '../components/LoadingSpinner';
-import type { RootState } from '../redux/store';
-import { Error } from '../components/Error';
-import { ProductFilters } from '../components/ProductFilters';
 
-import { useSearchFilterSort } from '../hooks/useSearchFilterSort';
+import { ProductCard } from '@components/ProductCard';
+import { LoadingSpinner } from '@components/LoadingSpinner';
+import { ProductFilters } from '@components/ProductFilters';
+import { Error } from '@components/Error';
+
+import type { RootState } from '@redux/store';
+import { useSearchFilterSort } from '@hooks/useSearchFilterSort';
 
 export const Product = () => {
   const { items: products, status, error } = useSelector((state: RootState) => state.products);

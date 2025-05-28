@@ -1,10 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import type { FavouritesState } from '../../types';
-import {
-  loadFromLocalStorage,
-  LOCAL_STORAGE_KEYS,
-  saveToLocalStorage,
-} from '../../utils/localStorage';
+import { loadFromLocalStorage, LOCAL_STORAGE_KEYS, saveToLocalStorage } from '@utils/localStorage';
 
 const persistedItems = loadFromLocalStorage(LOCAL_STORAGE_KEYS.FAVORITES);
 

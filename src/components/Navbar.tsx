@@ -5,7 +5,7 @@ interface NavbarProps {
   favoritesCount: number;
 }
 
-export default function Navbar({ favoritesCount }: NavbarProps) {
+export const Navbar = ({ favoritesCount }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -184,4 +184,4 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
       </div>
     </nav>
   );
-}
+};
