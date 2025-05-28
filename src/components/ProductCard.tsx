@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '@redux/hook';
 import { addFavorite, removeFavorite } from '@redux/slices/favouritesSlice';
-import { Button } from '@components/Button';
+import { Button } from '@/components/Button';
 import { RatingStars } from '@components/RatingStars';
 
 //FIXME: fix importing type alias

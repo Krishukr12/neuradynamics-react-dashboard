@@ -34,10 +34,6 @@ export const Favorites = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] p-4 sm:p-6 md:p-8 bg-background text-foreground">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-6 sm:mb-8">
-          <h3 className="font-medium text-lg sm:text-xl truncate">Favorite Products</h3>
-        </div>
-
         <div className="mb-6">
           <ProductFilters
             categories={categories}

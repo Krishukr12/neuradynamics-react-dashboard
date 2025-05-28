@@ -36,7 +36,6 @@ export const useSearchFilterSort = (data: Product[]) => {
 
   useEffect(() => {
     dispatch(clearSearchFilterSort());
-    console.log('running');
   }, [dispatch]);
 
   return {

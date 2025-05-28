@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 
-import { Button } from '@components/Button';
+import { Button } from '@/components/Button';
 import { RatingStars } from '@components/RatingStars';
 import { LoadingSpinner } from '@components/LoadingSpinner';
 import { ProductNotFound } from '@components/ProductNotFound';
