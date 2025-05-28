@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const PageNotFound = () => {
   return (
@@ -8,7 +8,7 @@ export const PageNotFound = () => {
           <div className="relative animate-bounce-slow">
             <svg
               className="w-32 h-32"
-              style={{ stroke: "var(--primary)" }}
+              style={{ stroke: 'var(--primary)' }}
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -29,8 +29,8 @@ export const PageNotFound = () => {
               Page Not Found
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The page you're looking for doesn't exist or has been moved. Let's
-              get you back to familiar territory.
+              The page you're looking for doesn't exist or has been moved. Let's get you back to
+              familiar territory.
             </p>
           </div>
 
@@ -38,13 +38,13 @@ export const PageNotFound = () => {
             to="/"
             className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105 flex items-center gap-2"
             style={{
-              backgroundColor: "var(--primary)",
-              color: "var(--primary-foreground)",
+              backgroundColor: 'var(--primary)',
+              color: 'var(--primary-foreground)',
             }}
           >
             <svg
               className="w-5 h-5"
-              style={{ stroke: "var(--primary-foreground)" }}
+              style={{ stroke: 'var(--primary-foreground)' }}
               fill="none"
               viewBox="0 0 24 24"
             >

@@ -1,2 +1,2 @@
-export * from "./product.types";
-export * from "./favourite.types";
+export * from './product.types';
+export * from './favourite.types';

@@ -1,41 +1,41 @@
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from 'react-redux';
+import { ProductCard } from '../components/ProductCard';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import type { RootState } from '../redux/store';
+import { Error } from '../components/Error';
+import { ProductFilters } from '../components/ProductFilters';
 
-import { fetchProducts } from "../redux/slices/productSlice";
-import { ProductCard } from "../components/ProductCard";
-import { useAppDispatch } from "../redux/hook";
-import { LoadingSpinner } from "../components/LoadingSpinner";
-import type { RootState } from "../redux/store";
-import { Error } from "../components/Error";
+import { useSearchFilterSort } from '../hooks/useSearchFilterSort';
 
 export const Product = () => {
-  const {
-    items: products,
-    status,
-    error,
-  } = useSelector((state: RootState) => state.products);
-  const dispatch = useAppDispatch();
+  const { items: products, status, error } = useSelector((state: RootState) => state.products);
 
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchProducts());
-    }
-  }, [dispatch, status]);
+  const { categories, filteredProducts, handleSearch, handleCategoryChange, handleSortChange } =
+    useSearchFilterSort(products);
 
   return (
     <div className="min-h-screen p-8 bg-[var(--background)] text-[var(--foreground)]">
       <div className="max-w-7xl mx-auto">
-        {status === "loading" ? (
+        {status === 'loading' ? (
           <div className="flex justify-center items-center h-[80vh]">
             <LoadingSpinner label="Loading products..." />
           </div>
         ) : error ? (
           <Error />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div className="flex flex-col gap-6">
+            <ProductFilters
+              categories={categories}
+              onSearch={value => handleSearch(value)}
+              onCategoryChange={value => handleCategoryChange(value)}
+              onSortChange={value => handleSortChange(value)}
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredProducts.map(product => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
         )}
       </div>

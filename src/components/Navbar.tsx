@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   favoritesCount: number;
@@ -14,12 +14,12 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
         <div className="flex justify-between h-16 items-center">
           <Link
             to="/"
-            style={{ color: "var(--primary)" }}
+            style={{ color: 'var(--primary)' }}
             className="text-2xl font-bold hover:opacity-80 transition-opacity"
           >
             <div className="flex items-center gap-2">
               <svg
-                style={{ stroke: "var(--primary)" }}
+                style={{ stroke: 'var(--primary)' }}
                 className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -40,12 +40,12 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
               to="/"
               className="pb-1 hover:border-primary transition-all flex items-center gap-2"
               style={{
-                color: "var(--foreground)",
-                borderBottom: "2px solid transparent",
+                color: 'var(--foreground)',
+                borderBottom: '2px solid transparent',
               }}
             >
               <svg
-                style={{ stroke: "var(--foreground)" }}
+                style={{ stroke: 'var(--foreground)' }}
                 className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -64,12 +64,12 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
               to="/favorites"
               className="pb-1 hover:border-primary transition-all flex items-center gap-2 relative"
               style={{
-                color: "var(--foreground)",
-                borderBottom: "2px solid transparent",
+                color: 'var(--foreground)',
+                borderBottom: '2px solid transparent',
               }}
             >
               <svg
-                style={{ stroke: "var(--foreground)" }}
+                style={{ stroke: 'var(--foreground)' }}
                 className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               </svg>
-              Favorites{favoritesCount === 0 ? "" : `(${favoritesCount})`}
+              Favorites{favoritesCount === 0 ? '' : `(${favoritesCount})`}
             </Link>
           </div>
 
@@ -90,13 +90,13 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-secondary/20 transition-colors"
               style={{
-                color: "var(--foreground)",
-                border: "1px solid var(--border)",
+                color: 'var(--foreground)',
+                border: '1px solid var(--border)',
               }}
             >
               {!isOpen ? (
                 <svg
-                  style={{ stroke: "var(--foreground)" }}
+                  style={{ stroke: 'var(--foreground)' }}
                   className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
                 </svg>
               ) : (
                 <svg
-                  style={{ stroke: "var(--foreground)" }}
+                  style={{ stroke: 'var(--foreground)' }}
                   className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -131,9 +131,9 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{
-          maxHeight: isOpen ? "200px" : "0",
-          backgroundColor: "var(--background)",
-          borderTop: "1px solid var(--border)",
+          maxHeight: isOpen ? '200px' : '0',
+          backgroundColor: 'var(--background)',
+          borderTop: '1px solid var(--border)',
         }}
       >
         <div className="px-4 py-3 space-y-3">
@@ -141,10 +141,10 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
             to="/"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: 'var(--foreground)' }}
           >
             <svg
-              style={{ stroke: "var(--foreground)" }}
+              style={{ stroke: 'var(--foreground)' }}
               className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
@@ -163,10 +163,10 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
             to="/favorites"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: 'var(--foreground)' }}
           >
             <svg
-              style={{ stroke: "var(--foreground)" }}
+              style={{ stroke: 'var(--foreground)' }}
               className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
@@ -178,7 +178,7 @@ export default function Navbar({ favoritesCount }: NavbarProps) {
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-            Favorites{favoritesCount === 0 ? "" : `(${favoritesCount})`}
+            Favorites{favoritesCount === 0 ? '' : `(${favoritesCount})`}
           </Link>
         </div>
       </div>

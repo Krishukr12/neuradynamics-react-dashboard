@@ -1,5 +1,5 @@
-import { type ButtonHTMLAttributes } from "react";
-import clsx from "clsx";
+import { type ButtonHTMLAttributes } from 'react';
+import clsx from 'clsx';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
@@ -12,7 +12,7 @@ export const Button = ({
   label,
   children,
   ariaLabel,
-  className = "",
+  className = '',
   style,
   ...props
 }: ButtonProps) => {
@@ -20,12 +20,12 @@ export const Button = ({
     <button
       aria-label={ariaLabel || label}
       className={clsx(
-        "px-2.5 py-2 rounded-lg transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed",
+        'px-2.5 py-2 rounded-lg transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
         className
       )}
       style={{
-        backgroundColor: "var(--primary)",
-        color: "var(--primary-foreground)",
+        backgroundColor: 'var(--primary)',
+        color: 'var(--primary-foreground)',
         ...style,
       }}
       {...props}

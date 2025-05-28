@@ -1,5 +1,5 @@
 export const LOCAL_STORAGE_KEYS = {
-  FAVORITES: "favoriteItems",
+  FAVORITES: 'favoriteItems',
 };
 
 export function loadFromLocalStorage(key: string): number[] | null {

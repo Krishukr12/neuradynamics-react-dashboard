@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from 'react-router';
 
 export const ProductNotFound = () => {
   return (
@@ -8,7 +8,7 @@ export const ProductNotFound = () => {
           <div className="relative animate-bounce-slow">
             <svg
               className="w-24 h-24 text-muted-foreground/30"
-              style={{ stroke: "var(--primary)" }}
+              style={{ stroke: 'var(--primary)' }}
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -23,7 +23,7 @@ export const ProductNotFound = () => {
                 strokeLinejoin="round"
                 strokeWidth={1.5}
                 d="M15 7a2 2 0 11-4 0 2 2 0 014 0z"
-                style={{ stroke: "var(--destructive)" }}
+                style={{ stroke: 'var(--destructive)' }}
               />
             </svg>
           </div>
@@ -33,8 +33,8 @@ export const ProductNotFound = () => {
               Product Not Found
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We couldn't find the product you're looking for. It might have
-              been moved or no longer available.
+              We couldn't find the product you're looking for. It might have been moved or no longer
+              available.
             </p>
           </div>
 
@@ -42,8 +42,8 @@ export const ProductNotFound = () => {
             to="/"
             className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105"
             style={{
-              backgroundColor: "var(--primary)",
-              color: "var(--primary-foreground)",
+              backgroundColor: 'var(--primary)',
+              color: 'var(--primary-foreground)',
             }}
           >
             <span className="font-medium text-lg">Browse Products →</span>

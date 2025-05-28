@@ -1,49 +1,54 @@
-import { useEffect, useMemo } from "react";
-import { ProductCard } from "../components/ProductCard";
-import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { EmptyFavorites } from "../components/EmptyFavorites";
-import { fetchProducts } from "../redux/slices/productSlice";
-import { LoadingSpinner } from "../components/LoadingSpinner";
-import { Error } from "../components/Error";
+import { useMemo } from 'react';
+import { ProductCard } from '../components/ProductCard';
+import { useAppSelector } from '../redux/hook';
+import { EmptyFavorites } from '../components/EmptyFavorites';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { Error } from '../components/Error';
+import { ProductFilters } from '../components/ProductFilters';
+
+import { useSearchFilterSort } from '../hooks/useSearchFilterSort';
 
 export const Favorites = () => {
-  const dispatch = useAppDispatch();
-  const favoritedProducts = useAppSelector((state) => state.favorites.items);
-  const { status, items: allProducts } = useAppSelector(
-    (state) => state.products
+  const { status, items: allProducts } = useAppSelector(state => state.products);
+
+  const favoritesProductIds = useAppSelector(state => state.favorites.items);
+
+  const favoritesProducts = useMemo(
+    () => allProducts.filter(product => favoritesProductIds.includes(product.id)),
+    [allProducts, favoritesProductIds]
   );
 
-  const favorites = useMemo(
-    () =>
-      allProducts.filter((product) => favoritedProducts.includes(product.id)),
-    [allProducts, favoritedProducts]
-  );
+  const { categories, filteredProducts, handleSearch, handleCategoryChange, handleSortChange } =
+    useSearchFilterSort(favoritesProducts);
 
-  useEffect(() => {
-    if (!allProducts.length) {
-      dispatch(fetchProducts());
-    }
-  }, [allProducts, dispatch]);
-
-  if (status === "loading")
+  if (status === 'loading')
     return (
       <div className="flex justify-center items-center h-[80vh]">
         <LoadingSpinner label="Favorite Products..." />
       </div>
     );
 
-  if (status === "failed") return <Error />;
-
-  if (favorites.length === 0) return <EmptyFavorites />;
+  if (status === 'failed') return <Error />;
+  if (favoritesProducts.length === 0) return <EmptyFavorites />;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] p-8 bg-background text-foreground">
+    <div className="min-h-[calc(100vh-4rem)] p-4 sm:p-6 md:p-8 bg-background text-foreground">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
-          <h3 className="font-medium truncate">Favorite Products</h3>
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
+          <h3 className="font-medium text-lg sm:text-xl truncate">Favorite Products</h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {favorites.map((product) => (
+
+        <div className="mb-6">
+          <ProductFilters
+            categories={categories}
+            onSearch={value => handleSearch(value)}
+            onCategoryChange={value => handleCategoryChange(value)}
+            onSortChange={value => handleSortChange(value)}
+          />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

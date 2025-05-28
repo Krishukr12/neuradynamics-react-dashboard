@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from 'react-router';
 
 export const EmptyFavorites = () => {
   return (
@@ -8,7 +8,7 @@ export const EmptyFavorites = () => {
           <div className="relative animate-bounce-slow">
             <svg
               className="w-24 h-24 text-muted-foreground/30"
-              style={{ stroke: "var(--foreground)" }}
+              style={{ stroke: 'var(--foreground)' }}
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -22,7 +22,7 @@ export const EmptyFavorites = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
                 className="w-12 h-12 animate-pulse"
-                style={{ stroke: "var(--primary)" }}
+                style={{ stroke: 'var(--primary)' }}
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -41,9 +41,8 @@ export const EmptyFavorites = () => {
               Your Favorites Are Empty
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              It looks like you haven't added any items to your favorites yet.
-              Explore our products and click Add to Favorites button to save
-              your favorites here!
+              It looks like you haven't added any items to your favorites yet. Explore our products
+              and click Add to Favorites button to save your favorites here!
             </p>
           </div>
 
@@ -51,8 +50,8 @@ export const EmptyFavorites = () => {
             to="/"
             className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105"
             style={{
-              backgroundColor: "var(--primary)",
-              color: "var(--primary-foreground)",
+              backgroundColor: 'var(--primary)',
+              color: 'var(--primary-foreground)',
             }}
           >
             <span className="font-medium text-lg">Start Shopping →</span>

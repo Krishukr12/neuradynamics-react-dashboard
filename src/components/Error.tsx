@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from 'react-router';
 
 export const Error = () => {
   return (
@@ -8,7 +8,7 @@ export const Error = () => {
           <div className="relative animate-bounce-slow">
             <svg
               className="w-24 h-24"
-              style={{ stroke: "var(--destructive)" }}
+              style={{ stroke: 'var(--destructive)' }}
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -23,7 +23,7 @@ export const Error = () => {
                 strokeLinejoin="round"
                 strokeWidth={1.5}
                 d="M12 12h.01"
-                style={{ stroke: "var(--primary)" }}
+                style={{ stroke: 'var(--primary)' }}
               />
             </svg>
           </div>
@@ -33,8 +33,8 @@ export const Error = () => {
               Something Went Wrong
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're having trouble loading this content. Please try again later
-              or contact support if the problem persists.
+              We're having trouble loading this content. Please try again later or contact support
+              if the problem persists.
             </p>
           </div>
 
@@ -43,8 +43,8 @@ export const Error = () => {
               onClick={() => window.location.reload()}
               className="px-6 py-3 rounded-full transition-all transform hover:scale-105"
               style={{
-                backgroundColor: "var(--primary)",
-                color: "var(--primary-foreground)",
+                backgroundColor: 'var(--primary)',
+                color: 'var(--primary-foreground)',
               }}
             >
               Try Again
@@ -53,8 +53,8 @@ export const Error = () => {
               to="/"
               className="px-6 py-3 rounded-full transition-all transform hover:scale-105 border"
               style={{
-                borderColor: "var(--primary)",
-                color: "var(--primary)",
+                borderColor: 'var(--primary)',
+                color: 'var(--primary)',
               }}
             >
               Return to Safety

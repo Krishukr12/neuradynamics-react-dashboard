@@ -1,10 +1,4 @@
-export const RatingStars = ({
-  rate,
-  ratingCount,
-}: {
-  rate: number;
-  ratingCount: number;
-}) => {
+export const RatingStars = ({ rate, ratingCount }: { rate: number; ratingCount: number }) => {
   const fullStars = Math.floor(rate);
   const hasHalfStar = rate % 1 >= 0.5;
 
@@ -13,10 +7,8 @@ export const RatingStars = ({
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-4 h-4 ${
-            index < fullStars ? "fill-current" : "fill-transparent"
-          }`}
-          style={{ stroke: "var(--primary)" }}
+          className={`w-4 h-4 ${index < fullStars ? 'fill-current' : 'fill-transparent'}`}
+          style={{ stroke: 'var(--primary)' }}
           viewBox="0 0 24 24"
         >
           <path
@@ -30,7 +22,7 @@ export const RatingStars = ({
       {hasHalfStar && (
         <svg
           className="w-4 h-4 fill-current"
-          style={{ stroke: "var(--primary)" }}
+          style={{ stroke: 'var(--primary)' }}
           viewBox="0 0 24 24"
         >
           <path
@@ -41,7 +33,7 @@ export const RatingStars = ({
           />
         </svg>
       )}
-      <span className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+      <span className="text-sm" style={{ color: 'var(--muted-foreground)' }}>
         {ratingCount}
       </span>
     </div>

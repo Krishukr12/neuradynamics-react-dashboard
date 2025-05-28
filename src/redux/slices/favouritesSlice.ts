@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { FavouritesState } from "../../types";
+import { createSlice } from '@reduxjs/toolkit';
+import type { FavouritesState } from '../../types';
 import {
   loadFromLocalStorage,
   LOCAL_STORAGE_KEYS,
   saveToLocalStorage,
-} from "../../utils/localStorage";
+} from '../../utils/localStorage';
 
 const persistedItems = loadFromLocalStorage(LOCAL_STORAGE_KEYS.FAVORITES);
 
@@ -13,7 +13,7 @@ const initialState: FavouritesState = {
 };
 
 const favoritesSlice = createSlice({
-  name: "favorites",
+  name: 'favorites',
   initialState,
   reducers: {
     addFavorite: (state, action) => {
@@ -23,16 +23,15 @@ const favoritesSlice = createSlice({
       }
     },
     removeFavorite: (state, action) => {
-      state.items = state.items.filter((id) => id !== action.payload);
+      state.items = state.items.filter(id => id !== action.payload);
       saveToLocalStorage(LOCAL_STORAGE_KEYS.FAVORITES, state.items);
     },
-    clearFavorites: (state) => {
+    clearFavorites: state => {
       state.items = [];
       saveToLocalStorage(LOCAL_STORAGE_KEYS.FAVORITES, []);
     },
   },
 });
 
-export const { addFavorite, removeFavorite, clearFavorites } =
-  favoritesSlice.actions;
+export const { addFavorite, removeFavorite, clearFavorites } = favoritesSlice.actions;
 export default favoritesSlice.reducer;
