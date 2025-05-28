@@ -26,20 +26,28 @@ To build a scalable ecommerce-style product dashboard that allows users to:
 ```
 src/
 ├── assets/
+│   └── images/
 ├── components/
-├── features/
-│   ├── products/
-│   ├── filters/
-│   └── favorites/
+├── hooks/
+│   ├── useSearchFilterSort.ts
+│   └── useDebounce.ts
 ├── pages/
-│   ├── Home.jsx
+│   ├── Product.tsx
 │   ├── ProductDetail.tsx
 │   └── Favorites.tsx
 ├── redux/
 │   ├── store.ts
+│   ├── hook.ts
 │   └── slices/
-├── routes/
-├── App.tsx
+│       ├── productSlice.ts
+│       ├── filterSlice.ts
+│       └── favoritesSlice.ts
+├── types/
+│   ├── product.types.ts
+│   └── common.types.ts
+├── utils/
+│   └── localstorage.ts
+│── index.css
 └── main.tsx
 ```
 
@@ -93,18 +101,21 @@ A brief walkthrough video demonstrating the app functionality.
 
 ## ✅ Features
 
-- [x] Project initialized with Vite + Tailwind
-- [ ] Product listing grid layout
-- [ ] Product detail page
-- [ ] Favorite/unfavorite products
-- [ ] Debounced search
-- [ ] Filter by category
-- [ ] Sort by price
-- [ ] Responsive design
-- [ ] Accessibility improvements
-- [ ] Redux Toolkit state slices
-- [ ] Unit and integration testing
-- [ ] Deployment and README
+- Product listing grid layout with responsive design
+- Product detail page with comprehensive information
+- Favorite/unfavorite products functionality
+- Debounced search implementation for better performance
+- Filter products by category
+- Sort products by price (ascending/descending)
+- Fully responsive design for all screen sizes
+- Accessibility improvements for better user experience
+- Redux Toolkit state management with separate slices
+- Product filtering and sorting using custom hooks
+- Loading states and error handling
+- Clean and maintainable code structure
+- Prettier and ESLint configuration
+- TypeScript for type safety
+- Vite for fast development and building
 
 
 Developer: Krishan Kumar Safi
