@@ -22,7 +22,7 @@ export const Button = ({
       className={clsx(
         'px-2.5 py-2 rounded-lg transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
         className
-      )}  
+      )}
       style={{
         backgroundColor: 'var(--primary)',
         color: 'var(--primary-foreground)',

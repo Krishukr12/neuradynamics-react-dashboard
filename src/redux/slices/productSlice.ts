@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { Product, ProductsState } from '../../types';
 
 export const fetchProducts = createAsyncThunk<Product[]>('products/fetch', async () => {
-  const res = await fetch('https://fakestoreapi.com/products');
+  const res = await fetch(import.meta.env.VITE_API_URL);
   return await res.json();
 });
 
