@@ -62,6 +62,7 @@ export const ProductFilters = ({
         </div>
 
         <select
+          name="categories"
           value={selectedCategory}
           onChange={e => {
             setSelectedCategory(e.target.value);

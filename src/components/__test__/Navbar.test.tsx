@@ -1,55 +1,42 @@
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { Navbar } from '@components/Navbar';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, test } from 'vitest';
 
-describe.skip('Navbar component', () => {
-  const renderWithRouter = (favoritesCount: number) =>
+describe('Navbar Component', () => {
+  const setup = (favoritesCount = 0) => {
     render(
-      <MemoryRouter>
+      <BrowserRouter>
         <Navbar favoritesCount={favoritesCount} />
-      </MemoryRouter>
+      </BrowserRouter>
     );
+  };
 
-  it('renders the logo and links', () => {
-    renderWithRouter(0);
-
-    expect(screen.getByText('UrbanCart')).toBeInTheDocument();
-    expect(screen.getAllByText('Products')[0]).toBeInTheDocument();
-    expect(screen.getAllByText('Favorites')[0]).toBeInTheDocument();
+  test('renders Navbar and displays brand name', () => {
+    setup();
+    expect(screen.getByText(/UrbanCart/i)).toBeInTheDocument();
   });
 
-  it('shows correct favorites count when > 0', () => {
-    renderWithRouter(3);
-    expect(screen.getAllByText(/Favorites\(3\)/)[0]).toBeInTheDocument();
+  test('displays Products and Favorites links on desktop view', () => {
+    setup(3);
+    expect(screen.getAllByText(/Products/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Favorites/i)[0]).toHaveTextContent('Favorites(3)');
   });
 
-  it('does not show favorites count when it is 0', () => {
-    renderWithRouter(0);
-    expect(screen.getAllByText('Favorites')[0]).toBeInTheDocument();
-    expect(screen.queryByText(/Favorites\(\d+\)/)).not.toBeInTheDocument();
+  test('toggle menu button is accessible with an aria-label', () => {
+    setup();
+    const toggleButton = screen.getByLabelText('Open menu');
+    expect(toggleButton).toBeInTheDocument();
   });
 
-  it('toggles mobile menu when hamburger is clicked', () => {
-    renderWithRouter(1);
-    const toggleButton = screen.getByRole('button');
-
-    expect(screen.getByText('Products')).toBeInTheDocument();
-    fireEvent.click(toggleButton);
-    expect(screen.getAllByText('Products').length).toBeGreaterThan(1);
+  test('menu expands and collapses on mobile toggle', () => {
+    setup(2);
+    const toggleButton = screen.getByLabelText('Open menu');
 
     fireEvent.click(toggleButton);
-    expect(screen.getAllByText('Products').length).toBeGreaterThan(0);
-  });
+    expect(screen.getAllByText(/Favorites/i)[1]).toBeVisible();
 
-  it('closes mobile menu on link click', () => {
-    renderWithRouter(2);
-    const toggleButton = screen.getByRole('button');
-    fireEvent.click(toggleButton);
-
-    const mobileFavoritesLink = screen.getAllByText(/Favorites\(2\)/)[1];
-    fireEvent.click(mobileFavoritesLink);
-
-    expect(screen.getByText('UrbanCart')).toBeInTheDocument();
+    const closeButton = screen.getByLabelText('Close menu');
+    fireEvent.click(closeButton);
   });
 });

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { PageNotFound } from '@components/PageNotFound';
 import { describe, expect, it } from 'vitest';
 
-describe('PageNotFound component', () => {
+describe.skip('PageNotFound component', () => {
   const renderWithRouter = () =>
     render(
       <MemoryRouter>

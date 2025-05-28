@@ -9,11 +9,15 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--background)] border-b border-[var(--border)] text-[var(--foreground)]">
+    <nav
+      aria-label="Main navigation"
+      className="sticky top-0 z-50 bg-[var(--background)] border-b border-[var(--border)] text-[var(--foreground)]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link
             to="/"
+            aria-label="UrbanCart Home"
             style={{ color: 'var(--primary)' }}
             className="text-2xl font-bold hover:opacity-80 transition-opacity"
           >
@@ -23,6 +27,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                 className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -38,6 +43,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
           <div className="hidden md:flex items-center gap-8">
             <Link
               to="/"
+              aria-label="Go to Products"
               className="pb-1 hover:border-primary transition-all flex items-center gap-2"
               style={{
                 color: 'var(--foreground)',
@@ -49,6 +55,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                 className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -62,6 +69,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
 
             <Link
               to="/favorites"
+              aria-label={`Go to Favorites ${favoritesCount > 0 ? `(${favoritesCount})` : ''}`}
               className="pb-1 hover:border-primary transition-all flex items-center gap-2 relative"
               style={{
                 color: 'var(--foreground)',
@@ -73,6 +81,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                 className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -88,6 +97,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
               className="p-2 rounded-lg hover:bg-secondary/20 transition-colors"
               style={{
                 color: 'var(--foreground)',
@@ -100,6 +110,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                   className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -114,6 +125,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                   className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -135,11 +147,13 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
           backgroundColor: 'var(--background)',
           borderTop: '1px solid var(--border)',
         }}
+        aria-label="Mobile navigation"
       >
         <div className="px-4 py-3 space-y-3">
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
+            aria-label="Go to Products"
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
             style={{ color: 'var(--foreground)' }}
           >
@@ -148,6 +162,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
               className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -162,6 +177,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
           <Link
             to="/favorites"
             onClick={() => setIsOpen(false)}
+            aria-label={`Go to Favorites ${favoritesCount > 0 ? `(${favoritesCount})` : ''}`}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
             style={{ color: 'var(--foreground)' }}
           >
@@ -170,6 +186,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
               className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
