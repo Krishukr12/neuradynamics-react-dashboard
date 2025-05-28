@@ -25,9 +25,22 @@ To build a scalable ecommerce-style product dashboard that allows users to:
 
 ```
 src/
+├── __test__/                    # Test files directory
 ├── assets/
 │   └── images/
 ├── components/
+│   ├── __test__/               # Component-specific tests
+│   ├── Button.tsx
+│   ├── EmptyFavorites.tsx
+│   ├── Error.tsx
+│   ├── Layout.tsx
+│   ├── LoadingSpinner.tsx
+│   ├── Navbar.tsx
+│   ├── PageNotFound.tsx
+│   ├── ProductCard.tsx
+│   ├── ProductFilters.tsx
+│   ├── ProductNotFound.tsx
+│   └── RatingStars.tsx
 ├── hooks/
 │   ├── useSearchFilterSort.ts
 │   └── useDebounce.ts
@@ -36,19 +49,22 @@ src/
 │   ├── ProductDetail.tsx
 │   └── Favorites.tsx
 ├── redux/
-│   ├── store.ts
+│   ├── __test__/               # Redux-specific tests
+│   ├── slices/
+│   │   ├── productSlice.ts
+│   │   ├── filterSlice.ts
+│   │   └── favoritesSlice.ts
 │   ├── hook.ts
-│   └── slices/
-│       ├── productSlice.ts
-│       ├── filterSlice.ts
-│       └── favoritesSlice.ts
+│   └── store.ts
+├── routes/                      # New directory for route configurations
 ├── types/
 │   ├── product.types.ts
 │   └── common.types.ts
 ├── utils/
 │   └── localstorage.ts
-│── index.css
-└── main.tsx
+├── index.css
+├── main.tsx
+└── vite-env.d.ts               # Vite environment type definitions
 ```
 
 ## ⚙️ Getting Started
@@ -80,7 +96,7 @@ Visit: [http://localhost:5173](http://localhost:5173)
 pnpm test
 ```
 
-You’ll find coverage reports and results in the terminal or generated coverage folder.
+You'll find coverage reports and results in the terminal or generated coverage folder.
 
 ## 📦 Build for Production
 
@@ -92,7 +108,7 @@ pnpm build
 
 This app is deployed on **Vercel**
 
-🔗 **Live Demo:** _Coming soon_
+🔗 **Live Demo:** [https://neuradynamics-react-dashboard.vercel.app/](https://neuradynamics-react-dashboard.vercel.app/)
 
 ## 📹 Demo Video
 
