@@ -28,7 +28,7 @@ export const Favorites = () => {
   if (status === "loading")
     return (
       <div className="flex justify-center items-center h-[80vh]">
-        <LoadingSpinner label="Products..." />
+        <LoadingSpinner label="Favorite Products..." />
       </div>
     );
 

@@ -10,6 +10,7 @@ import { Layout } from "./components/Layout.tsx";
 import { Product } from "./pages/Product.tsx";
 import { Favorites } from "./pages/Favorites.tsx";
 import { ProductDetails } from "./pages/ProductDetails.tsx";
+import { PageNotFound } from "./components/PageNotFound.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductDetails />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },
