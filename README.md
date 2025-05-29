@@ -141,7 +141,7 @@ This app is deployed on **Vercel**
 ## 📹 Demo Video
 
 A brief walkthrough video demonstrating the app functionality.  
-🎥 **Video Link:** _Coming soon_
+🎥 **Video Link:** [https://www.loom.com/share/6459fce734d24e57a2ffb1de2253a7eb?sid=08b875dc-45a3-488a-86f1-205411f36107](https://www.loom.com/share/6459fce734d24e57a2ffb1de2253a7eb?sid=08b875dc-45a3-488a-86f1-205411f36107)
 
 ## ✅ Features
 
