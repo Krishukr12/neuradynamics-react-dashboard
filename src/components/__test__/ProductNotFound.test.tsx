@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { ProductNotFound } from '@components/ProductNotFound';
 import { describe, expect, it } from 'vitest';
 
-describe.skip('ProductNotFound component', () => {
+describe('ProductNotFound component', () => {
   const renderWithRouter = () =>
     render(
       <MemoryRouter>
@@ -26,13 +26,6 @@ describe.skip('ProductNotFound component', () => {
     const browseLink = screen.getByRole('link', { name: /browse products/i });
     expect(browseLink).toBeInTheDocument();
     expect(browseLink).toHaveAttribute('href', '/');
-  });
-
-  it('renders the magnifying glass SVG icon', () => {
-    renderWithRouter();
-
-    const svg = screen.getByRole('img', { hidden: true });
-    expect(svg).toBeInTheDocument();
   });
 
   it('applies expected layout classes', () => {

@@ -35,7 +35,7 @@ const createTestStore = (preloadedState: FavoritesState = { items: [] }) => {
   });
 };
 
-describe.only('ProductCard Integration Test - Favorites', () => {
+describe('ProductCard Integration Test - Favorites', () => {
   const product = {
     id: 1,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',

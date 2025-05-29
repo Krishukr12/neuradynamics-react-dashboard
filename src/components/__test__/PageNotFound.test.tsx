@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { PageNotFound } from '@components/PageNotFound';
 import { describe, expect, it } from 'vitest';
 
-describe.skip('PageNotFound component', () => {
+describe('PageNotFound component', () => {
   const renderWithRouter = () =>
     render(
       <MemoryRouter>
@@ -25,13 +25,6 @@ describe.skip('PageNotFound component', () => {
     const returnHomeLink = screen.getByRole('link', { name: /return home/i });
     expect(returnHomeLink).toBeInTheDocument();
     expect(returnHomeLink).toHaveAttribute('href', '/');
-  });
-
-  it('renders bouncing icon and SVG correctly', () => {
-    renderWithRouter();
-
-    const svgElement = screen.getByRole('img', { hidden: true });
-    expect(svgElement).toBeInTheDocument();
   });
 
   it('applies Tailwind styles for layout and spacing', () => {

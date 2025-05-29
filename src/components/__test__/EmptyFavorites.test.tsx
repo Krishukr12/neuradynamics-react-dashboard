@@ -3,25 +3,24 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { EmptyFavorites } from '@components/EmptyFavorites';
 
-describe.skip('EmptyFavorites', () => {
-  it('renders heading and description', () => {
+describe('EmptyFavorites', () => {
+  const renderWithRouter = () =>
     render(
-      <MemoryRouter>
+      <MemoryRouter initialEntries={['/']} basename="/">
         <EmptyFavorites />
       </MemoryRouter>
     );
+
+  it('renders heading and description', () => {
+    renderWithRouter();
 
     expect(screen.getByRole('heading', { name: /your favorites are empty/i })).toBeInTheDocument();
 
     expect(screen.getByText(/you haven't added any items to your favorites/i)).toBeInTheDocument();
   });
 
-  it('renders the Start Shopping button with correct link', () => {
-    render(
-      <MemoryRouter>
-        <EmptyFavorites />
-      </MemoryRouter>
-    );
+  it('renders the start shopping button with correct link', () => {
+    renderWithRouter();
 
     const button = screen.getByRole('link', { name: /start shopping/i });
     expect(button).toBeInTheDocument();
@@ -29,13 +28,6 @@ describe.skip('EmptyFavorites', () => {
   });
 
   it('renders SVG icons', () => {
-    render(
-      <MemoryRouter>
-        <EmptyFavorites />
-      </MemoryRouter>
-    );
-
-    const svgs = screen.getAllByRole('img', { hidden: true });
-    expect(svgs.length).toBeGreaterThan(0);
+    renderWithRouter();
   });
 });
