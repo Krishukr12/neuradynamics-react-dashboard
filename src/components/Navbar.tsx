@@ -18,13 +18,11 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
           <Link
             to="/"
             aria-label="UrbanCart Home"
-            style={{ color: 'var(--primary)' }}
-            className="text-2xl font-bold hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold text-[var(--primary)] hover:opacity-80 transition-opacity"
           >
             <div className="flex items-center gap-2">
               <svg
-                style={{ stroke: 'var(--primary)' }}
-                className="w-6 h-6"
+                className="w-6 h-6 stroke-[var(--primary)]"
                 fill="none"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -44,15 +42,10 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
             <Link
               to="/"
               aria-label="Go to Products"
-              className="pb-1 hover:border-primary transition-all flex items-center gap-2"
-              style={{
-                color: 'var(--foreground)',
-                borderBottom: '2px solid transparent',
-              }}
+              className="pb-1 flex items-center gap-2 border-b-2 border-transparent hover:border-[var(--primary)] text-[var(--foreground)] transition-all"
             >
               <svg
-                style={{ stroke: 'var(--foreground)' }}
-                className="w-5 h-5"
+                className="w-5 h-5 stroke-[var(--foreground)]"
                 fill="none"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -70,15 +63,10 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
             <Link
               to="/favorites"
               aria-label={`Go to Favorites ${favoritesCount > 0 ? `(${favoritesCount})` : ''}`}
-              className="pb-1 hover:border-primary transition-all flex items-center gap-2 relative"
-              style={{
-                color: 'var(--foreground)',
-                borderBottom: '2px solid transparent',
-              }}
+              className="pb-1 flex items-center gap-2 border-b-2 border-transparent hover:border-[var(--primary)] text-[var(--foreground)] transition-all"
             >
               <svg
-                style={{ stroke: 'var(--foreground)' }}
-                className="w-5 h-5"
+                className="w-5 h-5 stroke-[var(--foreground)]"
                 fill="none"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -90,7 +78,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               </svg>
-              Favorites{favoritesCount === 0 ? '' : `(${favoritesCount})`}
+              Favorites{favoritesCount > 0 && `(${favoritesCount})`}
             </Link>
           </div>
 
@@ -98,31 +86,11 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
-              className="p-2 rounded-lg hover:bg-secondary/20 transition-colors"
-              style={{
-                color: 'var(--foreground)',
-                border: '1px solid var(--border)',
-              }}
+              className="p-2 rounded-lg border border-[var(--border)] hover:bg-secondary/20 text-[var(--foreground)] transition-colors"
             >
-              {!isOpen ? (
+              {isOpen ? (
                 <svg
-                  style={{ stroke: 'var(--foreground)' }}
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  style={{ stroke: 'var(--foreground)' }}
-                  className="w-6 h-6"
+                  className="w-6 h-6 stroke-[var(--foreground)]"
                   fill="none"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -134,6 +102,20 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6 stroke-[var(--foreground)]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               )}
             </button>
           </div>
@@ -141,12 +123,9 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
       </div>
 
       <div
-        className="md:hidden overflow-hidden transition-all duration-300"
-        style={{
-          maxHeight: isOpen ? '200px' : '0',
-          backgroundColor: 'var(--background)',
-          borderTop: '1px solid var(--border)',
-        }}
+        className={`md:hidden overflow-hidden transition-all duration-300 border-t border-[var(--border)] bg-[var(--background)] ${
+          isOpen ? 'max-h-60' : 'max-h-0'
+        }`}
         aria-label="Mobile navigation"
       >
         <div className="px-4 py-3 space-y-3">
@@ -154,12 +133,10 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
             to="/"
             onClick={() => setIsOpen(false)}
             aria-label="Go to Products"
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
-            style={{ color: 'var(--foreground)' }}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 text-[var(--foreground)] transition-colors"
           >
             <svg
-              style={{ stroke: 'var(--foreground)' }}
-              className="w-5 h-5"
+              className="w-5 h-5 stroke-[var(--foreground)]"
               fill="none"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -178,12 +155,10 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
             to="/favorites"
             onClick={() => setIsOpen(false)}
             aria-label={`Go to Favorites ${favoritesCount > 0 ? `(${favoritesCount})` : ''}`}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 transition-colors"
-            style={{ color: 'var(--foreground)' }}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/20 text-[var(--foreground)] transition-colors"
           >
             <svg
-              style={{ stroke: 'var(--foreground)' }}
-              className="w-5 h-5"
+              className="w-5 h-5 stroke-[var(--foreground)]"
               fill="none"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -195,7 +170,7 @@ export const Navbar = ({ favoritesCount }: NavbarProps) => {
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-            Favorites{favoritesCount === 0 ? '' : `(${favoritesCount})`}
+            Favorites{favoritesCount > 0 && `(${favoritesCount})`}
           </Link>
         </div>
       </div>

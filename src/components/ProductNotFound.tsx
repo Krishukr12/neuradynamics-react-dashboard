@@ -7,8 +7,7 @@ export const ProductNotFound = () => {
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
           <div className="relative animate-bounce-slow">
             <svg
-              className="w-24 h-24 text-muted-foreground/30"
-              style={{ stroke: 'var(--primary)' }}
+              className="w-24 h-24 text-muted-foreground/30 stroke-primary"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -23,13 +22,13 @@ export const ProductNotFound = () => {
                 strokeLinejoin="round"
                 strokeWidth={1.5}
                 d="M15 7a2 2 0 11-4 0 2 2 0 014 0z"
-                style={{ stroke: 'var(--destructive)' }}
+                className="stroke-destructive"
               />
             </svg>
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
+            <h1 className="tracking-tight bg-gradient-to-r from-primary/80 to-primary bg-clip-text">
               Product Not Found
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -40,11 +39,7 @@ export const ProductNotFound = () => {
 
           <Link
             to="/"
-            className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105"
-            style={{
-              backgroundColor: 'var(--primary)',
-              color: 'var(--primary-foreground)',
-            }}
+            className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105 bg-primary text-primary-foreground"
           >
             <span className="font-medium text-lg">Browse Products →</span>
           </Link>

@@ -6,12 +6,7 @@ export const Error = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
           <div className="relative animate-bounce-slow">
-            <svg
-              className="w-24 h-24"
-              style={{ stroke: 'var(--destructive)' }}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-24 h-24 stroke-[var(--destructive)]" fill="none" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -23,7 +18,7 @@ export const Error = () => {
                 strokeLinejoin="round"
                 strokeWidth={1.5}
                 d="M12 12h.01"
-                style={{ stroke: 'var(--primary)' }}
+                className="stroke-[var(--primary)]"
               />
             </svg>
           </div>
@@ -41,21 +36,13 @@ export const Error = () => {
           <div className="flex gap-4">
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-3 rounded-full transition-all transform hover:scale-105"
-              style={{
-                backgroundColor: 'var(--primary)',
-                color: 'var(--primary-foreground)',
-              }}
+              className="px-6 py-3 rounded-full transition-all transform hover:scale-105 bg-[var(--primary)] text-[var(--primary-foreground)]"
             >
               Try Again
             </button>
             <Link
               to="/"
-              className="px-6 py-3 rounded-full transition-all transform hover:scale-105 border"
-              style={{
-                borderColor: 'var(--primary)',
-                color: 'var(--primary)',
-              }}
+              className="px-6 py-3 rounded-full transition-all transform hover:scale-105 border border-[var(--primary)] text-[var(--primary)]"
             >
               Return to Safety
             </Link>

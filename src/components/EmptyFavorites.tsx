@@ -7,8 +7,7 @@ export const EmptyFavorites = () => {
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
           <div className="relative animate-bounce-slow">
             <svg
-              className="w-24 h-24 text-muted-foreground/30"
-              style={{ stroke: 'var(--foreground)' }}
+              className="w-24 h-24 text-muted-foreground/30 stroke-[var(--foreground)]"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -21,8 +20,7 @@ export const EmptyFavorites = () => {
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
-                className="w-12 h-12 animate-pulse"
-                style={{ stroke: 'var(--primary)' }}
+                className="w-12 h-12 animate-pulse stroke-[var(--primary)]"
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -48,11 +46,7 @@ export const EmptyFavorites = () => {
 
           <Link
             to="/"
-            className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105"
-            style={{
-              backgroundColor: 'var(--primary)',
-              color: 'var(--primary-foreground)',
-            }}
+            className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105 bg-[var(--primary)] text-[var(--primary-foreground)]"
           >
             <span className="font-medium text-lg">Start Shopping →</span>
           </Link>

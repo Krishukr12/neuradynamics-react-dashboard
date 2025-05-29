@@ -6,13 +6,9 @@ export const PageNotFound = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center space-y-6">
           <div className="relative animate-bounce-slow">
-            <svg
-              className="w-32 h-32"
-              style={{ stroke: 'var(--primary)' }}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-32 h-32 text-[color:var(--primary)]" fill="none" viewBox="0 0 24 24">
               <path
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={1.5}
@@ -36,15 +32,10 @@ export const PageNotFound = () => {
 
           <Link
             to="/"
-            className="mt-6 px-8 py-3 rounded-full transition-all transform hover:scale-105 flex items-center gap-2"
-            style={{
-              backgroundColor: 'var(--primary)',
-              color: 'var(--primary-foreground)',
-            }}
+            className="mt-6 px-8 py-3 rounded-full transition-transform transform hover:scale-105 flex items-center gap-2 bg-[color:var(--primary)] text-[color:var(--primary-foreground)]"
           >
             <svg
-              className="w-5 h-5"
-              style={{ stroke: 'var(--primary-foreground)' }}
+              className="w-5 h-5 stroke-[color:var(--primary-foreground)]"
               fill="none"
               viewBox="0 0 24 24"
             >

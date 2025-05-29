@@ -62,6 +62,7 @@ src/
 │   └── common.types.ts
 ├── utils/
 │   └── localstorage.ts
+├── .env                         # Environment variables
 ├── index.css
 ├── main.tsx
 └── vite-env.d.ts               # Vite environment type definitions

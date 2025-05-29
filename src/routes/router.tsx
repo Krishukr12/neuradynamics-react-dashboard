@@ -1,5 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { PageNotFound } from '@/components/PageNotFound';
+import { RouteError } from '@/components/RouteError';
 import { Favorites } from '@/pages/Favorites';
 import { Product } from '@/pages/Product';
 import { ProductDetails } from '@/pages/ProductDetails';
@@ -9,6 +10,7 @@ export const routes = [
   {
     path: '/',
     element: <Layout />,
+    errorElement: <RouteError />,
     children: [
       {
         path: '/',

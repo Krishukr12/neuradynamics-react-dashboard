@@ -24,13 +24,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <article
-      className="group relative flex flex-col rounded-xl border overflow-hidden transition-all hover:shadow-lg"
-      style={{
-        backgroundColor: 'var(--background)',
-        borderColor: 'var(--border)',
-      }}
-    >
+    <article className="group relative flex flex-col rounded-xl border overflow-hidden transition-all hover:shadow-lg bg-background border-border">
       <Link to={`/product/${id}`} className="flex flex-col flex-grow">
         <div className="aspect-square overflow-hidden bg-gray-100">
           <img
@@ -42,22 +36,16 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
         <div className="p-4 flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="text-sm capitalize" style={{ color: 'var(--muted-foreground)' }}>
-              {category}
-            </span>
+            <span className="text-sm capitalize text-muted-foreground">{category}</span>
             <RatingStars rate={rating.rate} ratingCount={rating.count} />
           </div>
 
-          <h3 className="font-medium truncate" style={{ color: 'var(--foreground)' }}>
-            {title}
-          </h3>
+          <h3 className="font-medium truncate text-foreground">{title}</h3>
         </div>
       </Link>
 
       <div className="px-4 pb-4 mt-auto flex items-center justify-between">
-        <span className="text-lg font-bold" style={{ color: 'var(--primary)' }}>
-          ${price.toFixed(2)}
-        </span>
+        <span className="text-lg font-bold text-primary">${price.toFixed(2)}</span>
         <Button
           ariaLabel={`${isProductFavorited ? 'Remove Favorites' : 'Add to Favorites'} ${title}`}
           label={isProductFavorited ? 'Remove Favorites' : 'Add to Favorites'}

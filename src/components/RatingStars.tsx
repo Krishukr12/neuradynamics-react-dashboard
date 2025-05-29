@@ -7,8 +7,7 @@ export const RatingStars = ({ rate, ratingCount }: { rate: number; ratingCount: 
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-4 h-4 ${index < fullStars ? 'fill-current' : 'fill-transparent'}`}
-          style={{ stroke: 'var(--primary)' }}
+          className={`w-4 h-4 stroke-primary ${index < fullStars ? 'fill-current' : 'fill-transparent'}`}
           viewBox="0 0 24 24"
         >
           <path
@@ -20,11 +19,7 @@ export const RatingStars = ({ rate, ratingCount }: { rate: number; ratingCount: 
         </svg>
       ))}
       {hasHalfStar && (
-        <svg
-          className="w-4 h-4 fill-current"
-          style={{ stroke: 'var(--primary)' }}
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-4 h-4 fill-current stroke-primary" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -33,9 +28,7 @@ export const RatingStars = ({ rate, ratingCount }: { rate: number; ratingCount: 
           />
         </svg>
       )}
-      <span className="text-sm" style={{ color: 'var(--muted-foreground)' }}>
-        {ratingCount}
-      </span>
+      <span className="text-sm text-muted-foreground">{ratingCount}</span>
     </div>
   );
 };
