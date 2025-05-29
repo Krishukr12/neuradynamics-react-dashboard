@@ -9,7 +9,7 @@ A responsive, modern product dashboard built with **React**, **Redux Toolkit**, 
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Router](https://reactrouter.com/)
-- [Vitest](https://vitest.dev/) or [Jest](https://jestjs.io/)
+- [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Fake Store API](https://fakestoreapi.com/)
 
